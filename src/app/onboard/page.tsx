@@ -193,7 +193,7 @@ export default function ArtistOnboardingPage() {
                   <FormControl>
                     <Input placeholder="e.g., https://example.com/artist.jpg" {...field} />
                   </FormControl>
-                  <FormDescription>A direct link to the artist's profile image.</FormDescription>
+                  <FormDescription>A direct link to the artists profile image.</FormDescription>
                   <FormMessage />
                 </FormItem>
               )}
@@ -302,7 +302,7 @@ export default function ArtistOnboardingPage() {
                       ))}
                     </SelectContent>
                   </Select>
-                  <FormDescription>The typical price range for the artist's bookings.</FormDescription>
+                  <FormDescription>The typical price range for the artists bookings.</FormDescription>
                   <FormMessage />
                 </FormItem>
               )}
@@ -318,7 +318,7 @@ export default function ArtistOnboardingPage() {
                   <FormControl>
                     <Input type="number" step="0.1" min="1" max="5" placeholder="e.g., 4.5" {...field} onChange={e => field.onChange(parseFloat(e.target.value))} />
                   </FormControl>
-                  <FormDescription>The artist's average rating (on a scale of 1 to 5).</FormDescription>
+                  <FormDescription>The artists average rating (on a scale of 1 to 5).</FormDescription>
                   <FormMessage />
                 </FormItem>
               )}
