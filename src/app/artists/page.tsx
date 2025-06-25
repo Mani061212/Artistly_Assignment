@@ -41,7 +41,7 @@ export default function ArtistsPage() {
     if (searchTerm) {
       filtered = filtered.filter((artist) =>
         artist.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        artist.description.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        //artist.description.toLowerCase().includes(searchTerm.toLowerCase()) ||
         artist.location.toLowerCase().includes(searchTerm.toLowerCase())
       );
     }
@@ -135,7 +135,7 @@ export default function ArtistsPage() {
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
           {filteredArtists.length > 0 ? (
             filteredArtists.map((artist) => (
-              <ArtistCard key={artist.id} artist={artist} />
+              <ArtistCard key={artist.id} artist={artist} index={0} />
             ))
           ) : (
             <p className="col-span-full text-center text-muted-foreground text-lg">
