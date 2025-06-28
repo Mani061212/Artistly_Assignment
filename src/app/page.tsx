@@ -9,16 +9,16 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 
 export default function HomePage() {
   const categories = [
-    { name: 'Singers', icon: '/images/home/Singer.jpg', description: 'Vocal powerhouses for any event.', slug: 'singers' },
-    { name: 'Dancers', icon: '/images/home/Dancer.jpg', description: 'Dynamic performers and choreographers.', slug: 'dancers' },
-    { name: 'Speakers', icon: '/images/home/Speaker.jpg', description: 'Inspirational and informative speakers.', slug: 'speakers' },
-    { name: 'DJs', icon: '/images/home/Dj.jpg', description: 'Beat creators for unforgettable parties.', slug: 'djs' },
+    { name: 'Singers', icon: '/Images/home/Singer.jpg', description: 'Vocal powerhouses for any event.', slug: 'singers' },
+    { name: 'Dancers', icon: '/Images/home/Dancer.jpg', description: 'Dynamic performers and choreographers.', slug: 'dancers' },
+    { name: 'Speakers', icon: '/Images/home/Speaker.jpg', description: 'Inspirational and informative speakers.', slug: 'speakers' },
+    { name: 'DJs', icon: '/Images/home/Dj.jpg', description: 'Beat creators for unforgettable parties.', slug: 'djs' },
   ];
 
   const features = [
-    { title: 'Effortless Booking', description: 'Find and book the perfect artist with our intuitive platform.', icon: '/images/home/E-Booking.jpg' },
-    { title: 'Diverse Talent Pool', description: 'Access a wide range of singers, dancers, speakers, and more.', icon: '/images/home/Talent.webp' },
-    { title: 'Seamless Management', description: 'Onboard artists and track submissions with ease.', icon: '/images/home/Management.png' },
+    { title: 'Effortless Booking', description: 'Find and book the perfect artist with our intuitive platform.', icon: '/Images/home/E-Booking.jpg' },
+    { title: 'Diverse Talent Pool', description: 'Access a wide range of singers, dancers, speakers, and more.', icon: '/Images/home/Talent.webp' },
+    { title: 'Seamless Management', description: 'Onboard artists and track submissions with ease.', icon: '/Images/home/Management.png' },
   ];
 
   return (
@@ -75,7 +75,7 @@ export default function HomePage() {
             className="relative aspect-[4/3] md:aspect-square rounded-2xl overflow-hidden shadow-xl"
           >
             <Image
-              src="/images/home/Hero-Artist.avif"
+              src="/Images/home/Hero-Artist.avif"
               alt="Diverse artists performing"
               fill
               className="rounded-2xl object-cover transition-transform duration-300 hover:scale-105"
