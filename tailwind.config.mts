@@ -3,7 +3,7 @@ import type { Config } from "tailwindcss";
 import tailwindcssAnimate from "tailwindcss-animate";
 
 const config: Config = {
-  darkMode: "class",// This should be correct for dark mode
+  darkMode: "class",
   content: [
     "./pages/**/*.{ts,tsx}",
     "./components/**/*.{ts,tsx}",
@@ -54,7 +54,6 @@ const config: Config = {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
-        // Custom colors from your theme (ensure these HSL values are correct from globals.css)
         artistic: {
             DEFAULT: "hsl(15 100% 57%)", // Example HSL for #FF5733
             dark: "hsl(355 89% 49%)",    // Example HSL for #C70039

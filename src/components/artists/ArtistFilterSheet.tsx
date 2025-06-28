@@ -36,7 +36,6 @@ interface ArtistFilterSheetProps {
   // Callbacks to pass filter values back to parent (page.tsx, which passes to context)
   onApplyFilters: (filters: FilterOptions) => void;
   onClearAllFilters: () => void; // Callback to clear all filters in parent/context
-  // Data for filter options (passed from parent/context)
   allGenres: string[];
   allArtistTypes: string[];
   priceRanges: string[];
@@ -54,14 +53,11 @@ export const ArtistFilterSheet = ({
   priceRanges,
   initialFilters,
 }: ArtistFilterSheetProps) => {
-  // Internal state for filter selections within the sheet (before applying)
   const [selectedGenres, setSelectedGenres] = useState<string[]>(initialFilters.selectedGenres);
   const [selectedTypes, setSelectedTypes] = useState<string[]>(initialFilters.selectedTypes);
   const [selectedPriceRange, setSelectedPriceRange] = useState<string>(initialFilters.selectedPriceRange);
   const [locationFilter, setLocationFilter] = useState<string>(initialFilters.locationFilter);
 
-  // Effect to synchronize internal sheet state with initialFilters prop
-  // This is crucial when filters are cleared or set externally (e.g., via the "Clear All" button on the main page)
   useEffect(() => {
     setSelectedGenres(initialFilters.selectedGenres);
     setSelectedTypes(initialFilters.selectedTypes);

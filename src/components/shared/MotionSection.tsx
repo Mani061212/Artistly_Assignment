@@ -1,4 +1,4 @@
-'use client'; // This component uses client-side JavaScript
+'use client';
 
 import { motion } from 'framer-motion';
 

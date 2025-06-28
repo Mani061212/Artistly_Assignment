@@ -1,5 +1,3 @@
-// src/data/artists.ts
-
 // Define the type for an Artist to ensure type safety across components
 export interface Artist {
   id: string;
@@ -10,8 +8,8 @@ export interface Artist {
   genres: string[];
   priceRange: string;
   rating: number;
-  description?: string; // Optional description for artists
-  bookingPrice?: number; // Optional booking price
+  description?: string;
+  bookingPrice?: number;
 }
 
 // Dummy Artist Data - This will simulate your API or JSON data
@@ -21,7 +19,7 @@ export const dummyArtists: Artist[] = [
     name: 'Arijit Singh',
     type: 'Bollywood Singer',
     location: 'Mumbai, India',
-    imageUrl: '/images/artist-arijit.jpg', // Placeholder image name
+    imageUrl: '/images/artist/Arijit-Singh.webp',
     genres: ['Bollywood', 'Pop', 'Romantic'],
     priceRange: '₹1,00,000+',
     rating: 4.9,
@@ -33,7 +31,7 @@ export const dummyArtists: Artist[] = [
     name: 'Shiamak Davar',
     type: 'Choreographer/Dancer',
     location: 'Mumbai, India',
-    imageUrl: '/images/artist-shiamak.jpg',
+    imageUrl: '/images/artist/Shiamak-Davar.jpg',
     genres: ['Bollywood', 'Contemporary', 'Jazz'],
     priceRange: '₹50,000 - ₹1,00,000',
     rating: 4.8,
@@ -45,7 +43,7 @@ export const dummyArtists: Artist[] = [
     name: 'Zakir Khan',
     type: 'Stand-up Comedian',
     location: 'Delhi, India',
-    imageUrl: '/images/artist-zakir.jpg',
+    imageUrl: '/images/artist/Zakir-Khan.avif',
     genres: ['Comedy', 'Storytelling', 'Observational'],
     priceRange: '₹20,000 - ₹50,000',
     rating: 4.7,
@@ -57,7 +55,7 @@ export const dummyArtists: Artist[] = [
     name: 'Nucleya',
     type: 'Electronic DJ',
     location: 'Goa, India',
-    imageUrl: '/images/artist-nucleya.jpg',
+    imageUrl: '/images/artist/Nucleya.avif',
     genres: ['EDM', 'Bass', 'Folkstep'],
     priceRange: '₹50,000 - ₹1,00,000',
     rating: 4.8,
@@ -69,7 +67,7 @@ export const dummyArtists: Artist[] = [
     name: 'Indian Ocean',
     type: 'Fusion Rock Band',
     location: 'Delhi, India',
-    imageUrl: '/images/artist-indianocean.jpg',
+    imageUrl: '/images/artist/Fusion-Rock-Band.jpg',
     genres: ['Fusion', 'Folk Rock', 'Progressive Rock'],
     priceRange: '₹50,000 - ₹1,00,000',
     rating: 4.6,
@@ -81,7 +79,7 @@ export const dummyArtists: Artist[] = [
     name: 'Shreya Ghoshal',
     type: 'Playback Singer',
     location: 'Mumbai, India',
-    imageUrl: '/images/artist-shreya.jpg',
+    imageUrl: '/images/artist/Shreya-Ghoshal.avif',
     genres: ['Bollywood', 'Classical', 'Regional'],
     priceRange: '₹1,00,000+',
     rating: 4.9,
@@ -92,8 +90,8 @@ export const dummyArtists: Artist[] = [
     id: '7',
     name: 'Raja Kumari',
     type: 'Hip-Hop Artist',
-    location: 'Los Angeles, USA', // Keeping some international flavor, but still Indian origin
-    imageUrl: '/images/artist-raja.jpg',
+    location: 'Los Angeles, USA',
+    imageUrl: '/images/artist/Raja-Kumari.jpg',
     genres: ['Hip-Hop', 'Rap', 'Indian Fusion'],
     priceRange: '₹20,000 - ₹50,000',
     rating: 4.5,
@@ -105,7 +103,7 @@ export const dummyArtists: Artist[] = [
     name: 'Bhuban Badyakar',
     type: 'Viral Singer',
     location: 'West Bengal, India',
-    imageUrl: '/images/artist-bhuban.jpg',
+    imageUrl: '/images/artist/Bhuban-Badyakar.avif',
     genres: ['Folk', 'Viral'],
     priceRange: 'Under ₹20,000',
     rating: 3.5,
@@ -117,7 +115,7 @@ export const dummyArtists: Artist[] = [
     name: 'Priya Mani',
     type: 'Classical Dancer',
     location: 'Chennai, India',
-    imageUrl: '/images/artist-priya.jpg',
+    imageUrl: '/images/artist/Priya-Mani.webp',
     genres: ['Bharatanatyam', 'Classical', 'Devotional'],
     priceRange: '₹20,000 - ₹50,000',
     rating: 4.7,
@@ -129,7 +127,7 @@ export const dummyArtists: Artist[] = [
     name: 'Kenny Sebastian',
     type: 'Stand-up Comedian',
     location: 'Bangalore, India',
-    imageUrl: '/images/artist-kenny.jpg',
+    imageUrl: '/images/artist/Kenny-Sebastian.jpg',
     genres: ['Comedy', 'Musical Comedy'],
     priceRange: '₹20,000 - ₹50,000',
     rating: 4.6,

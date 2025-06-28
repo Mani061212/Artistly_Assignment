@@ -59,7 +59,7 @@ export const Header = () => {
       {/* Right side: Theme Toggle and Login Button (visible on desktop) */}
       <div className="flex items-center gap-4 z-10">
         <ThemeToggle />
-        <Link href="/login" passHref className="hidden md:block">
+        <Link href="/work-in-progress" passHref className="hidden md:block">
           <Button className="bg-[hsl(15_100%_57%)] text-white hover:bg-[hsl(355_89%_49%)] font-medium px-4 py-2 rounded-md">
             Login
           </Button>
@@ -98,7 +98,7 @@ export const Header = () => {
               })}
             </nav>
             <div className="mt-auto pt-6 border-t border-border">
-              <Link href="/login" passHref>
+              <Link href="/work-in-progress" passHref>
                 <Button className="w-full bg-[hsl(15_100%_57%)] text-white hover:bg-[hsl(355_89%_49%)] font-medium py-2 rounded-md">
                   Login
                 </Button>

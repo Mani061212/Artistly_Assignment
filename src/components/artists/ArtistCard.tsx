@@ -1,4 +1,3 @@
-// src/components/ArtistCard.tsx
 import Image from 'next/image';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
@@ -12,7 +11,7 @@ interface Artist {
   name: string;
   type: string;
   location: string;
-  imageUrl: string; // This will now be handled more robustly
+  imageUrl: string;
   genres: string[];
   priceRange: string;
   rating: number;
@@ -22,12 +21,10 @@ interface Artist {
 
 interface ArtistCardProps {
   artist: Artist;
-  index: number; // For staggered animation delay
+  index: number;
 }
 
 export const ArtistCard = ({ artist, index }: ArtistCardProps) => {
-  // Determine the image source: if it's the problematic 'http://image.jpg',
-  // use the local default; otherwise, use the provided URL.
   const imageSource = artist.imageUrl === 'http://image.jpg' ? '/default-artist.png' : artist.imageUrl;
 
   return (
@@ -41,11 +38,10 @@ export const ArtistCard = ({ artist, index }: ArtistCardProps) => {
       <Card className="flex flex-col h-full overflow-hidden hover:shadow-lg transition-shadow duration-300">
         <div className="relative w-full aspect-video">
           <Image
-            src={imageSource} // Use the resolved image source
+            src={imageSource}
             alt={artist.name}
             fill
-            style={{ objectFit: 'cover' }}
-            className="rounded-t-lg"
+            className="rounded-t-lg object-cover shadow-md"
           />
         </div>
         <CardHeader className="pb-2">
@@ -63,7 +59,7 @@ export const ArtistCard = ({ artist, index }: ArtistCardProps) => {
           <p>Genres: {artist.genres.join(', ')}</p>
         </CardContent>
         <CardFooter className="pt-0">
-          <Link href={`/artists/${artist.id}`} className="w-full" passHref>
+          <Link href="/work-in-progress" className="w-full" passHref>
             <Button variant="outline" className="w-full border-orange-500 text-orange-500 hover:bg-orange-600/10">
               Ask for Quote
             </Button>

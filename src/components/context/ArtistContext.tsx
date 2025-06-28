@@ -3,7 +3,6 @@
 import React, { createContext, useContext, useState, useMemo, ReactNode } from 'react';
 import { dummyArtists, allGenres, allArtistTypes, priceRanges, Artist } from '@/data/artists';
 
-// 1. Define the shape of your context state
 interface FilterOptions {
   selectedGenres: string[];
   selectedTypes: string[];
@@ -12,7 +11,7 @@ interface FilterOptions {
 }
 
 interface ArtistContextType {
-  artists: Artist[]; // The original dummy data (now mutable state)
+  artists: Artist[]; // The original dummy data
   filteredArtists: Artist[]; // The filtered list
   searchTerm: string;
   setSearchTerm: React.Dispatch<React.SetStateAction<string>>;

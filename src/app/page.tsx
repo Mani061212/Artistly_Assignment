@@ -9,16 +9,16 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 
 export default function HomePage() {
   const categories = [
-    { name: 'Singers', icon: '/images/category-singers.jpg', description: 'Vocal powerhouses for any event.' },
-    { name: 'Dancers', icon: '/images/category-dancers.jpg', description: 'Dynamic performers and choreographers.' },
-    { name: 'Speakers', icon: '/images/category-speakers.jpg', description: 'Inspirational and informative speakers.' },
-    { name: 'DJs', icon: '/images/category-djs.jpg', description: 'Beat creators for unforgettable parties.' },
+    { name: 'Singers', icon: '/images/home/Singer.jpg', description: 'Vocal powerhouses for any event.', slug: 'singers' },
+    { name: 'Dancers', icon: '/images/home/Dancer.jpg', description: 'Dynamic performers and choreographers.', slug: 'dancers' },
+    { name: 'Speakers', icon: '/images/home/Speaker.jpg', description: 'Inspirational and informative speakers.', slug: 'speakers' },
+    { name: 'DJs', icon: '/images/home/Dj.jpg', description: 'Beat creators for unforgettable parties.', slug: 'djs' },
   ];
 
   const features = [
-    { title: 'Effortless Booking', description: 'Find and book the perfect artist with our intuitive platform.', icon: '/images/hero-event.jpg' },
-    { title: 'Diverse Talent Pool', description: 'Access a wide range of singers, dancers, speakers, and more.', icon: '/images/artist-default.jpg' },
-    { title: 'Seamless Management', description: 'Onboard artists and track submissions with ease.', icon: '/images/icon-management.svg' },
+    { title: 'Effortless Booking', description: 'Find and book the perfect artist with our intuitive platform.', icon: '/images/home/E-Booking.jpg' },
+    { title: 'Diverse Talent Pool', description: 'Access a wide range of singers, dancers, speakers, and more.', icon: '/images/home/Talent.webp' },
+    { title: 'Seamless Management', description: 'Onboard artists and track submissions with ease.', icon: '/images/home/Management.png' },
   ];
 
   return (
@@ -75,10 +75,9 @@ export default function HomePage() {
             className="relative aspect-[4/3] md:aspect-square rounded-2xl overflow-hidden shadow-xl"
           >
             <Image
-              src="/public/hero-artist.avif"
+              src="/images/home/Hero-Artist.avif"
               alt="Diverse artists performing"
-              width={500}
-              height={500}
+              fill
               className="rounded-2xl object-cover transition-transform duration-300 hover:scale-105"
             />
           </MotionDiv>
@@ -103,34 +102,34 @@ export default function HomePage() {
           </MotionH1>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
             {categories.map((category, index) => (
-              <MotionDiv
-                key={category.name}
-                initial={{ opacity: 0, scale: 0.9 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.5, delay: 1.4 + index * 0.1 }}
-                whileHover={{ scale: 1.05 }}
-                className="group"
-              >
-                <Card className="flex flex-col items-center p-6 h-full bg-card hover:bg-card/90 transition-colors duration-300 shadow-md hover:shadow-lg">
-                  <CardHeader className="p-0 pb-4">
-                    <div className="relative w-32 h-32 rounded-full overflow-hidden mb-4">
-                      <Image
-                        src={category.icon}
-                        alt={category.name}
-                        width={128}
-                        height={128}
-                        className="object-cover group-hover:scale-110 transition-transform duration-300"
-                      />
-                    </div>
-                    <CardTitle className="text-xl font-semibold text-foreground text-center">
-                      {category.name}
-                    </CardTitle>
-                  </CardHeader>
-                  <CardContent className="text-muted-foreground text-center text-sm p-0">
-                    {category.description}
-                  </CardContent>
-                </Card>
-              </MotionDiv>
+              <Link href={`/artists?category=${category.slug}`} passHref key={category.name}>
+                <MotionDiv
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.5, delay: 1.4 + index * 0.1 }}
+                  whileHover={{ scale: 1.05 }}
+                  className="group"
+                >
+                  <Card className="flex flex-col items-center p-6 h-full bg-card hover:bg-card/90 transition-colors duration-300 shadow-md hover:shadow-lg">
+                    <CardHeader className="p-0 pb-4">
+                      <div className="relative w-32 h-32 rounded-full overflow-hidden mb-4">
+                        <Image
+                          src={category.icon}
+                          alt={category.name}
+                          fill
+                          className="object-cover group-hover:scale-110 transition-transform duration-300"
+                        />
+                      </div>
+                      <CardTitle className="text-xl font-semibold text-foreground text-center">
+                        {category.name}
+                      </CardTitle>
+                    </CardHeader>
+                    <CardContent className="text-muted-foreground text-center text-sm p-0">
+                      {category.description}
+                    </CardContent>
+                  </Card>
+                </MotionDiv>
+              </Link>
             ))}
           </div>
         </div>
@@ -162,22 +161,24 @@ export default function HomePage() {
                 whileHover={{ scale: 1.03 }}
                 className="flex flex-col items-center text-center p-6 bg-card rounded-xl shadow-md hover:shadow-xl transition-shadow duration-300"
               >
-                {feature.icon.endsWith('.jpg') ? (
-                  <Image
-                    src={feature.icon}
-                    alt={feature.title}
-                    width={100}
-                    height={100}
-                    className="rounded-full mb-4 object-cover"
-                  />
+                {feature.icon.endsWith('.jpg') || feature.icon.endsWith('.avif') || feature.icon.endsWith('.webp') || feature.icon.endsWith('.png') ? (
+                  <div className="relative w-24 h-24 mb-4 rounded-full overflow-hidden">
+                    <Image
+                      src={feature.icon}
+                      alt={feature.title}
+                      fill
+                      className="rounded-full object-cover"
+                    />
+                  </div>
                 ) : (
-                  <Image
-                    src={feature.icon}
-                    alt={feature.title}
-                    width={100}
-                    height={100}
-                    className="rounded-full mb-4 object-contain"
-                  />
+                  <div className="relative w-24 h-24 mb-4 rounded-full overflow-hidden">
+                    <Image
+                      src={feature.icon}
+                      alt={feature.title}
+                      fill
+                      className="rounded-full object-contain"
+                    />
+                  </div>
                 )}
                 <h3 className="text-xl font-semibold text-foreground mb-2">{feature.title}</h3>
                 <p className="text-muted-foreground text-sm">{feature.description}</p>
